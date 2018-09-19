@@ -1,0 +1,9 @@
+---
+applications:
+- name: scs-config-server-encryption
+  buildpack: java_buildpack_offline
+  path: ./target/scs-config-server-encryption-0.0.1-SNAPSHOT.jar
+  services:
+  # This config server is created with the command:
+  #   cf create-service p-config-server standard spring-cloud-playground-config -c '{"git": { "uri": "https://github.com/mtthwcmpbll/spring-cloud-playground-config" }, "encrypt": { "key": "sup3r53cr3tk3y" } }'
+  - spring-cloud-playground-config
